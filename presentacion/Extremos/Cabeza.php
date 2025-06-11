@@ -13,29 +13,31 @@
 </head>
 
 <body>
-    <div>
-        <img src="img/LogoAplicacion.png" class="img-fluid" alt="image desc" />
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="#">TheWalkingPets</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="img/LogoAplicacion.png" alt="Logo" style="max-height: 100px;" class="img-fluid me-2" />
+        <span class="fw-bold">TheWalkingPets</span>
+    </a>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../InicioContactenos.php">Contáctenos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Iniciar sesión</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">TheWalkingPets</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../InicioContactenos.php">Contáctenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
