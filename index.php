@@ -26,7 +26,9 @@ session_start();
 $paginas_sin_autenticacion = array(
     "presentacion/Inicio.php",
     "presentacion/Extremos/Cabeza.php",
-    "presentacion/Extremos/Pie.php"
+    "presentacion/Extremos/Pie.php",
+    "presentacion/InicioContactenos.php"
+
 );
 
 $paginas_con_autenticacion = array(

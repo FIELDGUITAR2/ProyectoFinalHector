@@ -14,7 +14,7 @@
 
 <body>
     <div>
-        <img src="" class="img-fluid" alt="image desc" />
+        <img src="img/LogoAplicacion.png" class="img-fluid" alt="image desc" />
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -30,7 +30,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contáctenos</a>
+                    <a class="nav-link" href="../InicioContactenos.php">Contáctenos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Iniciar sesión</a>
