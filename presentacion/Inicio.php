@@ -21,8 +21,9 @@
     </div>
 
     <!-- Secciones: Misión, Visión y Objetivos -->
+    <!-- Secciones: Misión, Visión y Objetivos -->
     <div class="row justify-content-center text-center mt-5">
-        <div class="col-12 col-md-4 mb-4">
+        <div class="col-12 col-md-4 mb-4 p-3 bg-light-brown text-dark rounded-4 shadow">
             <h3>Misión</h3>
             <p>
                 En <strong>The WalkingPets</strong>, nos dedicamos a ofrecer servicios profesionales de paseo y cuidado
@@ -30,7 +31,7 @@
                 mientras facilitamos la vida diaria de sus dueños.
             </p>
         </div>
-        <div class="col-12 col-md-4 mb-4">
+        <div class="col-12 col-md-4 mb-4 p-3 bg-light-brown text-dark rounded-4 shadow">
             <h3>Visión</h3>
             <p>
                 Ser la empresa de referencia en paseo y atención de mascotas a nivel local y regional, reconocida por su
@@ -38,7 +39,7 @@
                 mascotas.
             </p>
         </div>
-        <div class="col-12 col-md-4 mb-4">
+        <div class="col-12 col-md-4 mb-4 p-3 bg-light-brown text-dark rounded-4 shadow">
             <h3>Objetivos</h3>
             <ul class="text-start">
                 <li>Brindar paseos seguros, divertidos y adaptados a las necesidades específicas de cada mascota.</li>
@@ -54,6 +55,7 @@
             </ul>
         </div>
     </div>
+
 </div>
 
 <!-- Bootstrap JS -->
