@@ -8,13 +8,13 @@
     <div id="carruselMascotas" class="carousel slide shadow rounded" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="img/Presentacion1.webp" class="d-block w-100" alt="Perro 1">
+          <img src="img/dog-5753302.jpg" class="d-block w-100" alt="Perro 1">
         </div>
         <div class="carousel-item">
-          <img src="img/Presentacion3.webp" class="d-block w-100" alt="Perro 2">
+          <img src="img/standup-paddleboarding-1838969.jpg" class="d-block w-100" alt="Perro 2">
         </div>
         <div class="carousel-item">
-          <img src="img/Presentacion2.jpg" class="d-block w-100" alt="Perro 3">
+          <img src="img/woman-2711279.jpg" class="d-block w-100" alt="Perro 3">
         </div>
       </div>
 
