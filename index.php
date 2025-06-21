@@ -1,5 +1,7 @@
 <?php 
 session_start();
+
+
 /*require ("logica/Especialidad.php");*/
 ?>
 <!DOCTYPE html>
@@ -25,10 +27,7 @@ session_start();
 
 $paginas_sin_autenticacion = array(
     "presentacion/Inicio.php",
-    "presentacion/Extremos/Cabeza.php",
-    "presentacion/Extremos/Pie.php",
     "presentacion/InicioContactenos.php"
-
 );
 
 $paginas_con_autenticacion = array(
@@ -44,7 +43,7 @@ if(!isset($_GET["pid"])){
         include $pid;
     }else if(in_array($pid, $paginas_con_autenticacion)){
         if(!isset($_SESSION["id"])){
-            include "presentacion/Inicio.php";
+            include "presentacion/Autenticar.php";
         }else{
             include $pid;
         }
