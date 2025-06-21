@@ -33,7 +33,7 @@ if (isset($_POST["autenticar"])) {
 }
 ?>
 <?php
-include("presentacion/Extremos/Cabeza.php")
+include("presentacion/Extremos/Cabeza.php");
     ?>
 
 <div class="login-container">
@@ -54,5 +54,5 @@ include("presentacion/Extremos/Cabeza.php")
   </div>
 
 <?php
-include("presentacion/Extremos/Pie.php")
+include("presentacion/Extremos/Pie.php");
     ?>

@@ -1,8 +1,13 @@
 <?php 
 session_start();
-
-
-/*require ("logica/Especialidad.php");*/
+/*require("logica/Conexion.php");
+require("logica/Admin.php");
+require("logica/Duenio.php");
+require("logica/FechaRegistro.php");
+require("logica/Mascota.php");
+require("logica/Admin.php");
+require("logica/Admin.php");
+require("logica/Admin.php");*/
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,10 +32,12 @@ session_start();
 
 $paginas_sin_autenticacion = array(
     "presentacion/Inicio.php",
-    "presentacion/InicioContactenos.php"
+    "presentacion/InicioContactenos.php",
+    "presentacion/Autenticar.php"
 );
 
 $paginas_con_autenticacion = array(
+
 );
 
 

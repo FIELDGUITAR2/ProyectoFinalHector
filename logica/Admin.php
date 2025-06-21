@@ -1,0 +1,31 @@
+<?php
+class Admin extends Persona
+{
+    private $Clave;
+    private $FechaRegistro;
+
+    public function __construct($Id, $Nombre, $Apellido, $Telefono, $Direccion, $Foto, $Clave, $FechaRegistro)
+    {
+        parent::__construct($Id, $Nombre, $Apellido, $Telefono, $Direccion, $Foto);
+        $this->Clave = $Clave;
+        $this->FechaRegistro = $FechaRegistro;
+    }
+
+    public function Autenticar()
+    {
+        $conexion = new Conexion();
+        $adminDAO = new AdminDAO("", "", "", $this->correo, $this->clave);
+        $conexion->abrir();
+        $conexion->ejecutar($adminDAO->autenticar());
+        if ($conexion->filas() == 1) {
+            $this->id = $conexion->registro()[0];
+            $conexion->cerrar();
+            return true;
+        } else {
+            $conexion->cerrar();
+            return false;
+        }
+    }
+}
+
+?>

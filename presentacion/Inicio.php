@@ -2,21 +2,36 @@
 
 <div class="container py-5">
 
-  <!-- Imagen principal con texto encima -->
-  <div class="row">
-    <div class="col">
-      <div class="position-relative rounded-4 overflow-hidden shadow">
-        <img id="imgPrincipal"
-             src="https://images.unsplash.com/photo-1601758003122-58e5f2b28597?auto=format&fit=crop&w=1200&h=400&q=80"
-             alt="Paseador de mascotas"
-             class="img-fluid w-100 imagen-principal">
-        <div class="position-absolute top-50 start-50 translate-middle text-white text-center text-white-shadow">
-          <h1 class="display-4 fw-bold">Bienvenido</h1>
-          <p class="lead fs-5">¡Caminamos con amor, ladrido tras ladrido!</p>
+    <div class="container my-5">
+    <h2 class="text-center mb-4" style="color: #4e342e;">Galería de The WalkingPets</h2>
+
+    <div id="carruselMascotas" class="carousel slide shadow rounded" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/Presentacion1.webp" class="d-block w-100" alt="Perro 1">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Presentacion3.webp" class="d-block w-100" alt="Perro 2">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Presentacion2.jpg" class="d-block w-100" alt="Perro 3">
         </div>
       </div>
+
+      <!-- Botones de control -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carruselMascotas" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carruselMascotas" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
   <!-- Secciones: Misión, Visión, Objetivos -->
   <div class="row justify-content-center text-center mt-5 g-4">
