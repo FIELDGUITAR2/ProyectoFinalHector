@@ -17,6 +17,36 @@
             object-fit: cover;
             border-radius: 1rem;
         }
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar-brand img {
+            max-height: 50px;
+        }
+        .section-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            color: #4e342e;
+            font-weight: bold;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-nav .nav-link {
+            color: #4e342e;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #a0522d;
+        }
+        .navbar-brand {
+            color: #4e342e;
+        }
+        .navbar-brand:hover {
+            color: #a0522d;
+        }   
     </style>
 </head>
 

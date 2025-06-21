@@ -18,7 +18,6 @@
         </div>
       </div>
 
-      <!-- Botones de control -->
       <button class="carousel-control-prev" type="button" data-bs-target="#carruselMascotas" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
         <span class="visually-hidden">Anterior</span>
