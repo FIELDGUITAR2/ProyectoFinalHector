@@ -2,34 +2,32 @@
 
 <div class="container py-5">
 
-    <div class="container my-5">
-    <h2 class="text-center mb-4" style="color: #4e342e;">Galería de The WalkingPets</h2>
+  <div class="container my-5">
+  <h2 class="text-center mb-4" style="color: #4e342e;">Galería de The WalkingPets</h2>
 
-    <div id="carruselMascotas" class="carousel slide shadow rounded" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/dog-5753302.jpg" class="d-block w-100" alt="Perro 1">
-        </div>
-        <div class="carousel-item">
-          <img src="img/standup-paddleboarding-1838969.jpg" class="d-block w-100" alt="Perro 2">
-        </div>
-        <div class="carousel-item">
-          <img src="img/woman-2711279.jpg" class="d-block w-100" alt="Perro 3">
-        </div>
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carruselMascotas" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carruselMascotas" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
+  <div id="carruselMascotas" class="carousel slide shadow rounded" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/dog-5753302.jpg" class="d-block w-100 img-fluid rounded" alt="Perro 1">
     </div>
-  </div>
+    <div class="carousel-item">
+      <img src="img/standup-paddleboarding-1838969.jpg" class="d-block w-100 img-fluid rounded" alt="Perro 2">
+    </div>
+    <div class="carousel-item">
+      <img src="img/woman-2711279.jpg" class="d-block w-100 img-fluid rounded" alt="Perro 3">
+    </div>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselMascotas" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselMascotas" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+  </div>
 </body>
 
   <!-- Secciones: Misión, Visión, Objetivos -->
