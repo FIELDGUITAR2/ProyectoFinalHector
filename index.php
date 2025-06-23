@@ -11,7 +11,9 @@ session_start();
 $paginas_sin_autenticacion = [
     "presentacion/Inicio.php",
     "presentacion/InicioContactenos.php",
-    "presentacion/Autenticar.php"
+    "presentacion/Autenticar.php",
+    "Presentacion/Extremos/Cabeza.php",
+    "Presentacion/Extremos/Pie.php"
 ];
 
 $paginas_con_autenticacion = [

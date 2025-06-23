@@ -23,7 +23,7 @@
 
         public function Autenticar()
         {
-            return "";
+            return "select IdAdmin from Administrador where Telefono = '" . $this->Telefono . "' and clave = md5('" . $this->Clave . "');";
         }
 
     }

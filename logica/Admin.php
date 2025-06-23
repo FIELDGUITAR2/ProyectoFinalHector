@@ -14,9 +14,10 @@ class Admin extends Persona
     public function Autenticar()
     {
         $conexion = new Conexion();
-        $adminDAO = new AdminDAO("", "", "", $this->correo, $this->clave);
+        $adminDAO = new AdminDAO("","","",$this->Telefono,"",
+        "",$this->Clave,"");
         $conexion->abrir();
-        $conexion->ejecutar($adminDAO->autenticar());
+        $conexion->ejecutar($adminDAO->Autenticar());
         if ($conexion->filas() == 1) {
             $this->id = $conexion->registro()[0];
             $conexion->cerrar();

@@ -72,7 +72,7 @@
                             href="?pid=<?php echo base64_encode("presentacion/InicioContactenos.php") ?>">Contáctenos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="presentacion/Autenticar.php">Iniciar sesión</a>
+                        <a class="nav-link" href="?pid=<?php echo base64_encode("presentacion/Autenticar.php") ?>">Iniciar sesión</a>
                     </li>
                 </ul>
             </div>

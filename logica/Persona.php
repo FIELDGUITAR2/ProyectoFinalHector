@@ -1,11 +1,11 @@
 <?php
     class Persona{
-        private $Nombre;
-        private $Apellido;
-        private $Telefono;
-        private $Direccion;
-        private $Id;
-        private $Foto;
+        protected $Nombre;
+        protected $Apellido;
+        protected $Telefono;
+        protected $Direccion;
+        protected $Id;
+        protected $Foto;
 
         public function __construct($Id = 0, $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "")
         {
