@@ -34,25 +34,30 @@ if (isset($_POST["autenticar"])) {
 ?>
 <?php
 include("presentacion/Extremos/Cabeza.php");
-    ?>
+?>
 
 <div class="login-container">
     <h2 class="text-center mb-4 login-title">Iniciar Sesión</h2>
-    <form>
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" placeholder="••••••••" required>
-      </div>
-      <div class="d-grid">
-        <button type="submit" class="btn btn-dark-brown">Ingresar</button>
-      </div>
+    <?php if ($error) { ?>
+        <div class="alert alert-danger" role="alert">
+            Correo o contraseña incorrectos.
+        </div>
+    <?php } ?>
+    <form method="post" action="">
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+        </div>
+        <div class="mb-3">
+            <label for="clave" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="clave" name="clave" placeholder="••••••••" required>
+        </div>
+        <div class="d-grid">
+            <button type="submit" name="autenticar" class="btn btn-dark-brown">Ingresar</button>
+        </div>
     </form>
-  </div>
+</div>
 
 <?php
 include("presentacion/Extremos/Pie.php");
-    ?>
+?>
