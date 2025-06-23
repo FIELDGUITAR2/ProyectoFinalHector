@@ -1,4 +1,13 @@
 <?php
+    // Solo si se nesesita
+    /*
+    require_once("logica/Admin.php");
+    require_once("logica/Duenio.php");
+    require_once("persistencia/Conexion.php");
+    require_once("persistencia/AdminDAO.php");
+    require_once("persistencia/DuenioDAO.php");
+    */
+
     // Iniciar sesión si no está iniciada
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -15,29 +24,31 @@
     if (isset($_POST["autenticar"])) {
         $correo = $_POST["correo"];
         $clave = $_POST["clave"];
-        // $admin = new Admin("", "", "", $correo, $clave);
-        if ($admin->autenticar()) {
+        $admin = new Admin("","","",$correo,"",
+        "", $clave, "");
+        if ($admin->Autenticar()) {
             $_SESSION["id"] = $admin->getId();
             $_SESSION["rol"] = "admin";
-            header("Location: ?pid=" . base64_encode("presentacion/sesionAdmin.php"));
+            header("Location: ?pid=" . base64_encode("presentacion/SesionAdmin.php"));
             exit();
         } else {
-            // $medico = new Medico("", "", "", $correo, $clave);
-            if ($medico->autenticar()) {
-                $_SESSION["id"] = $medico->getId();
-                $_SESSION["rol"] = "medico";
-                header("Location: ?pid=" . base64_encode("presentacion/sesionMedico.php"));
+            $Duenio = new Duenio("","","",$correo,"",
+            "",$clave,"");
+            if ($Duenio->Autenticar()) {
+                $_SESSION["id"] = $Duenio->getId();
+                $_SESSION["rol"] = "duenio";
+                header("Location: ?pid=" . base64_encode("presentacion/SesionDuenio.php"));
                 exit();
             } else {
                 // $paciente = new Paciente("", "", "", $correo, $clave);
-                if ($paciente->autenticar()) {
+                /* if ($paciente->autenticar()) {
                     $_SESSION["id"] = $paciente->getId();
                     $_SESSION["rol"] = "paciente";
                     header("Location: ?pid=" . base64_encode("presentacion/sesionPaciente.php"));
                     exit();
                 } else {
                     $error = true;
-                }
+                }*/
             }
         }
     }

@@ -2,12 +2,12 @@
 session_start();
 
 // Si necesitas los require, descomenta y organiza aquí:
-// require_once("logica/Conexion.php");
-// require_once("logica/Admin.php");
-// require_once("logica/Duenio.php");
-// require_once("logica/FechaRegistro.php");
-// require_once("logica/Mascota.php");
-
+ /* require_once("logica/Conexion.php");
+ require_once("logica/Admin.php");
+ require_once("logica/Duenio.php");
+ require_once("logica/FechaRegistro.php");
+ require_once("logica/Mascota.php");
+*/
 $paginas_sin_autenticacion = [
     "presentacion/Inicio.php",
     "presentacion/InicioContactenos.php",

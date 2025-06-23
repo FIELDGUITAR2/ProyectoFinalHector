@@ -1,4 +1,7 @@
 <?php
+require_once("persistencia/AdminDAO.php");
+require_once("persistencia/Conexion.php");
+require_once("logica/Persona.php");
 class Admin extends Persona
 {
     private $Clave;
@@ -19,7 +22,7 @@ class Admin extends Persona
         $conexion->abrir();
         $conexion->ejecutar($adminDAO->Autenticar());
         if ($conexion->filas() == 1) {
-            $this->id = $conexion->registro()[0];
+            $this->Id = $conexion->registro()[0];
             $conexion->cerrar();
             return true;
         } else {

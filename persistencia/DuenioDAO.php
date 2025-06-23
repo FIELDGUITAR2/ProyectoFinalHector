@@ -23,7 +23,7 @@ class DuenioDAO {
 
     public function Autenticar()
     {
-        return "select IdDuenio from Duenio where Telefono = '" . $this->Telefono . "' and clave = md5('" . $this->Clave . "');";
+        return "select IdDuenio from Duenio where Telefono = '" . $this->Telefono . "' and Clave = md5('" . $this->Clave . "');";
     }
 }
 ?>
