@@ -1,4 +1,5 @@
 <?php
+require_once("logica/Admin.php");
 include("presentacion/Extremos/Cabeza.php");
 ?>
 <div class="container my-5">
@@ -10,22 +11,25 @@ include("presentacion/Extremos/Cabeza.php");
         <table class="table table-bordered table-striped table-hover">
           <thead class="table-dark">
             <tr>
+              <th>ID</th>
               <th>Nombre</th>
-              <th>Correo</th>
+              <th>Apellido</th>
               <th>Contacto</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Jose Samir Gonzalez Ortiz</td>
-              <td>josagoor@gmail.com</td>
-              <td>123456789</td>
-            </tr>
-            <tr>
-              <td>Natalia Guzman</td>
-              <td>NatGuz@gmail.com</td>
-              <td>987654321</td>
-            </tr>
+          <?php
+          $admin = new Admin("", "", "", "", "", "", "", "");
+          $Admins = $admin->MostrarAdmins();
+          foreach ($Admins as $adm) {
+            echo "<tr>";
+            echo "<td>" . $adm->getId() . "</td>";
+            echo "<td>" . $adm->getNombre() . "</td>";
+            echo "<td>" . $adm->getApellido() . "</td>";
+            echo "<td>" . $adm->getTelefono() . "</td>";
+            echo "</tr>";
+          }
+          ?>
           </tbody>
         </table>
       </div>
@@ -36,8 +40,7 @@ include("presentacion/Extremos/Cabeza.php");
       <div class="ratio ratio-4x3">
         <iframe
           src="https://www.google.com/maps/embed?pb=!4v1750528449017!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ2s1SWpsbWdF!2m2!1d4.629365711660336!2d-74.05051642264509!3f296.25330423353756!4f1.9076132031608637!5f0.7820865974627469"
-          style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>

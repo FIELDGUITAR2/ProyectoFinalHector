@@ -25,5 +25,7 @@ class DuenioDAO {
     {
         return "select IdDuenio from Duenio where Telefono = '" . $this->Telefono . "' and Clave = md5('" . $this->Clave . "');";
     }
+
+    
 }
 ?>

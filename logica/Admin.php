@@ -30,6 +30,39 @@ class Admin extends Persona
             return false;
         }
     }
+
+    public function MostrarAdmins(){
+        $conexion = new Conexion();
+        $adminDAO = new AdminDAO();
+        $conexion -> abrir();
+        $conexion -> ejecutar($adminDAO -> MostrarAdmins());
+        $Admins = array();
+        while(($datos = $conexion -> registro()) != null){
+            
+            $admin = new Admin("$datos[0]", $datos[2], $datos[1], $datos[3], "", "", "", "");
+            array_push($Admins, $admin);
+        }
+        $conexion -> cerrar();
+        return $Admins;
+    }
+
+
+
+        /**
+         * Get the value of Clave
+         */ 
+        public function getClave()
+        {
+                return $this->Clave;
+        }
+
+        /**
+         * Get the value of FechaRegistro
+         */ 
+        public function getFechaRegistro()
+        {
+                return $this->FechaRegistro;
+        }
 }
 
 ?>

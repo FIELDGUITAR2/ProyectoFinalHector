@@ -26,5 +26,12 @@
             return "select IdAdmin from Administrador where Telefono = '" . $this->Telefono . "' and clave = md5('" . $this->Clave . "');";
         }
 
+        public function MostrarAdmins()
+    {
+        return "select a.idAdmin as ID, a.Apellido as Apellido, a.Nombre as Nombre, a.Telefono as Telefono 
+            FROM
+            Administrador a";
+    }
+
     }
 ?>
