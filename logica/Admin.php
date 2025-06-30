@@ -7,7 +7,7 @@ class Admin extends Persona
     private $Clave;
     private $FechaRegistro;
 
-    public function __construct($Id, $Nombre, $Apellido, $Telefono, $Direccion, $Foto, $Clave, $FechaRegistro)
+    public function __construct($Id = "", $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "", $Clave = "", $FechaRegistro = "")
     {
         parent::__construct($Id, $Nombre, $Apellido, $Telefono, $Direccion, $Foto);
         $this->Clave = $Clave;

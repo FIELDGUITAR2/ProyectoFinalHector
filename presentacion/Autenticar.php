@@ -36,7 +36,7 @@
             "",$clave,"");
             if ($Duenio->Autenticar()) {
                 $_SESSION["id"] = $Duenio->getId();
-                $_SESSION["rol"] = "duenio";
+                $_SESSION["rol"] = "Duenio";
                 header("Location: ?pid=" . base64_encode("presentacion/SesionDuenio.php"));
                 exit();
             } else {

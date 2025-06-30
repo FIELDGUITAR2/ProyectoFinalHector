@@ -1,9 +1,9 @@
 <?php
-    include("presentacion/Extremos/Cabeza.php");
+    include("presentacion/ExtremosRol/Cabeza.php");
 ?>
-
-Duenio Autenticado
-
 <?php
-    include("presentacion/Extremos/Pie.php");
+    include("presentacion/MenuDuenio.php");
+?>
+<?php
+    include("presentacion/ExtremosRol/Pie.php");
 ?>

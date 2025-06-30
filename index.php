@@ -13,7 +13,9 @@ $paginas_sin_autenticacion = [
     "presentacion/InicioContactenos.php",
     "presentacion/Autenticar.php",
     "Presentacion/Extremos/Cabeza.php",
-    "Presentacion/Extremos/Pie.php"
+    "Presentacion/Extremos/Pie.php",
+    "Presentacion/ExtremosRol/Cabeza.php",
+    "Presentacion/ExtremosRol/Pie.php"
 ];
 
 $paginas_con_autenticacion = [

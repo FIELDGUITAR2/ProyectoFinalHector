@@ -9,7 +9,7 @@ class Duenio extends Persona
     private $FechaRegistro;
     private $IdEstadoDuenio;
 
-    public function __construct($Id, $Nombre, $Apellido, $Telefono, $Direccion, $Foto, $Clave, $FechaRegistro)
+    public function __construct($Id = "", $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "", $Clave = "", $FechaRegistro ="")
     {
         parent::__construct($Id, $Nombre, $Apellido, $Telefono, $Direccion,
          $Foto);
