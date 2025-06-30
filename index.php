@@ -17,6 +17,8 @@ $paginas_sin_autenticacion = [
 ];
 
 $paginas_con_autenticacion = [
+    "presentacion/SesionAdmin.php",
+    "presentacion/SesionDuenio.php"
     // Agrega aquí las páginas que requieren autenticación
 ];
 ?>

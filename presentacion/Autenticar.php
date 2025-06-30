@@ -1,12 +1,12 @@
 <?php
     // Solo si se nesesita
-    /*
+    
     require_once("logica/Admin.php");
     require_once("logica/Duenio.php");
     require_once("persistencia/Conexion.php");
     require_once("persistencia/AdminDAO.php");
     require_once("persistencia/DuenioDAO.php");
-    */
+    
 
     // Iniciar sesión si no está iniciada
     if (session_status() == PHP_SESSION_NONE) {
