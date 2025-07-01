@@ -14,6 +14,11 @@
                 <div class="card-body">
                     <form action="procesar_crear_duenio.php" method="post" novalidate></form>
                         <div class="mb-3">
+                            <label for="id" class="form-label" style="color: #3e2723;">Id:</label>
+                            <input type="text" id="id" name="id" class="form-control" required style="background-color: #fff; border-color: #795548;">
+                            <div class="invalid-feedback">Por favor, ingrese su Numero de Identificacion.</div>
+                        </div>
+                        <div class="mb-3">
                             <label for="nombre" class="form-label" style="color: #3e2723;">Nombre:</label>
                             <input type="text" id="nombre" name="nombre" class="form-control" required style="background-color: #fff; border-color: #795548;">
                             <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
@@ -22,11 +27,6 @@
                             <label for="apellido" class="form-label" style="color: #3e2723;">Apellido:</label>
                             <input type="text" id="apellido" name="apellido" class="form-control" required style="background-color: #fff; border-color: #795548;">
                             <div class="invalid-feedback">Por favor, ingrese su apellido.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label" style="color: #3e2723;">Correo electrónico:</label>
-                            <input type="email" id="email" name="email" class="form-control" required style="background-color: #fff; border-color: #795548;">
-                            <div class="invalid-feedback">Por favor, ingrese un correo electrónico válido.</div>
                         </div>
                         <div class="mb-3">
                             <label for="telefono" class="form-label" style="color: #3e2723;">Teléfono:</label>
