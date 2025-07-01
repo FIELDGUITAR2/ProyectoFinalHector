@@ -45,7 +45,7 @@ class Duenio extends Persona
         $conexion->abrir();
         $conexion->ejecutar($duenioDAO->Consultar());
         $registro = $conexion->registro();
-        if ($conexion->filas() == 1) {
+        if ($conexion->filas() == 1 && $registro !== null) {
             $this->Nombre = $registro[0];
             $this->Apellido = $registro[1];
             $this->Telefono = $registro[2];

@@ -1,5 +1,6 @@
 <?php
     include("presentacion/Extremos/Cabeza.php");
+    require_once("logica/Duenio.php");
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,7 +13,7 @@
                     <h4>Crear Cuenta</h4>
                 </div>
                 <div class="card-body">
-                    <form action="procesar_crear_duenio.php" method="post" novalidate></form>
+                    <form action="procesar_crear_duenio.php" method="post" novalidate>
                         <div class="mb-3">
                             <label for="id" class="form-label" style="color: #3e2723;">Id:</label>
                             <input type="text" id="id" name="id" class="form-control" required style="background-color: #fff; border-color: #795548;">
@@ -37,6 +38,11 @@
                             <label for="direccion" class="form-label" style="color: #3e2723;">Dirección:</label>
                             <input type="text" id="direccion" name="direccion" class="form-control" required style="background-color: #fff; border-color: #795548;">
                             <div class="invalid-feedback">Por favor, ingrese su dirección.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clave" class="form-label" style="color: #3e2723;">Contrasenia:</label>
+                            <input type="password" id="clave" name="clave" class="form-control" required style="background-color: #fff; border-color: #795548;">
+                            <div class="invalid-feedback">Por favor, ingrese su contrasenia.</div>
                         </div>
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn" style="background-color: #795548; color: #fff;">Crear Cuenta</button>
@@ -65,6 +71,16 @@
         })
 })()
 </script>
+<?php
+    // Recibir los datos enviados por POST
+    $id = isset($_POST['id']) ? $_POST['id'] : '';
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
+    $apellido = isset($_POST['apellido']) ? $_POST['apellido'] : '';
+    $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
+    $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : '';
+    $fechaRegistro = date("Y-m-d");
+
+?>
 <?php
     include("presentacion/Extremos/Pie.php");
 ?>
