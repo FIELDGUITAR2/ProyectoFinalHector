@@ -9,12 +9,13 @@ class Duenio extends Persona
     private $FechaRegistro;
     private $IdEstadoDuenio;
 
-    public function __construct($Id = "", $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "", $Clave = "", $FechaRegistro ="")
+    public function __construct($Id = "", $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "", $Clave = "", $FechaRegistro ="", $IdEstadoDuenio = "")
     {
         parent::__construct($Id, $Nombre, $Apellido, $Telefono, $Direccion,
          $Foto);
         $this->Clave = $Clave;
         $this->FechaRegistro = $FechaRegistro;
+        $this->IdEstadoDuenio = $IdEstadoDuenio;
     }
 
     public function Autenticar()
@@ -36,6 +37,40 @@ class Duenio extends Persona
         }
     }
     
+    public function Consultar()
+    {
+        $conexion = new Conexion();
+        $duenioDAO = new DuenioDAO($this->Id, "", "", 
+            "", "", "", "", "");
+        $conexion->abrir();
+        $conexion->ejecutar($duenioDAO->Consultar());
+        $registro = $conexion->registro();
+        if ($conexion->filas() == 1) {
+            $this->Nombre = $registro[0];
+            $this->Apellido = $registro[1];
+            $this->Telefono = $registro[2];
+            $this->Direccion = $registro[3];
+            $this->Foto = $registro[4];
+            $this->Clave = $registro[5];
+            $this->FechaRegistro = $registro[6];
+            $this->IdEstadoDuenio = $registro[7];
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function Crear()
+    {
+        $conexion = new Conexion();
+        $duenioDAO = new DuenioDAO($this->Id, $this->Nombre, $this->Apellido, 
+            $this->Telefono, $this->Direccion, $this->Foto, 
+            $this->Clave, $this->FechaRegistro);
+        $conexion->abrir();
+        $conexion->ejecutar($duenioDAO->Insertar());
+        $conexion->cerrar();
+    }
+
     /**
      * Get the value of Clave
      */ 

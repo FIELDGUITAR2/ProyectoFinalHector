@@ -74,6 +74,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="?pid=<?php echo base64_encode("presentacion/Autenticar.php") ?>">Iniciar sesión</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?pid=<?php echo base64_encode("presentacion/CrearCuenta.php") ?>">Crear cuenta</a>
+                    </li>
                 </ul>
             </div>
         </div>

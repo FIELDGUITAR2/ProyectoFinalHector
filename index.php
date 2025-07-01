@@ -12,10 +12,11 @@ $paginas_sin_autenticacion = [
     "presentacion/Inicio.php",
     "presentacion/InicioContactenos.php",
     "presentacion/Autenticar.php",
-    "Presentacion/Extremos/Cabeza.php",
-    "Presentacion/Extremos/Pie.php",
-    "Presentacion/ExtremosRol/Cabeza.php",
-    "Presentacion/ExtremosRol/Pie.php"
+    "presentacion/Extremos/Cabeza.php",
+    "presentacion/Extremos/Pie.php",
+    "presentacion/ExtremosRol/Cabeza.php",
+    "presentacion/ExtremosRol/Pie.php",
+    "presentacion/CrearCuenta.php"
 ];
 
 $paginas_con_autenticacion = [

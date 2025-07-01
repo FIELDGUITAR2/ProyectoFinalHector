@@ -102,7 +102,7 @@ if($_SESSION["rol"] == "Duenio") {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="?pid=<?php echo base64_encode("") ?>">Cerrar sesion</a>
+                                href="?pid=<?php echo base64_encode("presentacion/Autenticar.php")?>&sesion=false">Cerrar sesion</a>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +145,7 @@ if($_SESSION["rol"] == "Duenio") {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="?pid=<?php echo base64_encode("") ?>">Cerrar sesion</a>
+                                href="?pid=<?php echo base64_encode("presentacion/autenticar.php")?>&sesion=false">Cerrar sesion</a>
                         </li>
                     </ul>
                 </div>
