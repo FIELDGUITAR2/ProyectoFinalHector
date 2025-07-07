@@ -2,6 +2,7 @@
 include("presentacion/ExtremosRol/Cabeza.php");
 require_once("logica/Raza.php");
 require_once("logica/EstadoPerrito.php");
+
 $idDuenio = $_SESSION['idDuenio'] ?? '';
 
 
@@ -14,10 +15,20 @@ $fechaNacimiento = $_POST['fechaNacimiento'] ?? '';
 $mensaje = '';
 $mensajeTipo = '';
 
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once("logica/Mascota.php");
 
-    $mascota = new Mascota("",$nombreMascota,$raza,"","",$peso,$idDuenio,$estadoPerrito,$observacion);
+    $mascota = new Mascota("",
+    $nombreMascota,
+    $raza,
+    $fechaNacimiento,
+    "",
+    $peso,
+    $idDuenio,
+    $estadoPerrito,
+    $observacion);
     if ($mascota->InsertarMascota()) {
         $mensaje = "Mascota añadida correctamente.";
         $mensajeTipo = "success";
@@ -73,7 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         if ($estados && is_array($estados)) {
                             foreach ($estados as $estado) {
                                 $selected = ($estadoPerrito == $estado->getId()) ? 'selected' : '';
-                                echo "<option value='{$estado->getId()}' $selected>{$estado->getValor()}</option>";
+                                //echo "<option value='{$estado->getId()}' $selected>{$estado->getValor()}</option>";
+                                echo "<option value='{$estado->getId()}' >{$estado->getValor()}</option>";
                             }
                         } else {
                             echo "<option value=''>No hay estados disponibles</option>";

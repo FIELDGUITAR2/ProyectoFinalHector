@@ -133,16 +133,21 @@ class MascotaDAO
 
     public function InsertarMascota()
     {
-        return "insert into Perrito(Nombre,IdRaza,IdDuenio,Foto,FechaNacimiento,Peso,Observacion,IdEstadoPerrito)
+        /*return "insert into Perrito(Nombre,IdRaza,IdDuenio,Foto,FechaNacimiento,Peso,Observacion,IdEstadoPerrito)
         VALUES
-        (".$this->Nombre.",
-        ".$this->Raza.",
-        ".$this->IdDuenio.",
-        ".$this->Foto.",
-        ".$this->FechaNacimiento.",
-        ".$this->Peso.",
-        ".$this->Observaciones.",
-        ".$this->idEstadoPerrito.")";
+        ('".$this->Nombre."',"
+        .$this->Raza.","
+        .$this->IdDuenio.",'"
+        .$this->Foto."','"
+        .$this->FechaNacimiento."','"
+        .$this->Peso."','"
+        .$this->Observaciones."',"
+        .$this->idEstadoPerrito.")";*/
+        return "insert into Perrito(Nombre,IdRaza,IdDuenio,Foto,FechaNacimiento,Peso,Observacion,IdEstadoPerrito)\n"
+
+    . "        VALUES\n"
+
+    . "        ('".$this->getNombre()."',".$this->getRaza().",".$this->getIdDuenio().",'".$this->getFoto()."','".$this->getFechaNacimiento()."','".$this->getPeso()."','".$this->getObservaciones()."',".$this->getIdEstadoPerrito().");";
     }
 
 }
