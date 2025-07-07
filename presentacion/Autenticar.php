@@ -24,16 +24,17 @@
     if (isset($_POST["autenticar"])) {
         $correo = $_POST["correo"];
         $clave = $_POST["clave"];
-        $admin = new Admin("","","",$correo,"",
-        "", $clave, "");
+        $admin = new Admin();
+        $admin->setTelefono($correo);
         if ($admin->Autenticar()) {
             $_SESSION["id"] = $admin->getId();
             $_SESSION["rol"] = "admin";
             header("Location: ?pid=" . base64_encode("presentacion/SesionAdmin.php"));
             exit();
         } else {
-            $Duenio = new Duenio("","","",$correo,"",
-            "",$clave,"");
+            $Duenio = new Duenio();
+            $Duenio->setTelefono($correo);
+            $Duenio->setClave($clave);
             if ($Duenio->Autenticar()) {
                 $_SESSION["id"] = $Duenio->getId();
                 $_SESSION["rol"] = "Duenio";

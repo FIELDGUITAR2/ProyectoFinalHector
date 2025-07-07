@@ -30,7 +30,7 @@
     {
         return "select a.idAdmin as ID, a.Apellido as Apellido, a.Nombre as Nombre, a.Telefono as Telefono 
             FROM
-            Administrador a";
+            administrador a";
     }
 
     }

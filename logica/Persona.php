@@ -6,8 +6,27 @@
         protected $Direccion;
         protected $Id;
         protected $Foto;
+        protected $Correo;
 
-        public function __construct($Id = 0, $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "")
+        /**
+         * Get the value of Correo
+         */ 
+        public function getCorreo()
+        {
+                return $this->Correo;
+        }
+
+        /**
+         * Set the value of Correo
+         *
+         * @param string $Correo
+         */ 
+        public function setCorreo($Correo)
+        {
+                $this->Correo = $Correo;
+        }
+
+        public function __construct($Id = 0, $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "", $Correo = "")
         {
             $this->Id = $Id;
             $this->Nombre = $Nombre;
@@ -15,6 +34,7 @@
             $this->Telefono = $Telefono;
             $this->Direccion = $Direccion;
             $this->Foto = $Foto;
+            $this->Correo = $Correo;
         }
 
         /**
@@ -63,6 +83,18 @@
         public function getDireccion()
         {
                 return $this->Direccion;
+        }
+
+        /**
+         * Set the value of Telefono
+         *
+         * @return  self
+         */ 
+        public function setTelefono($Telefono)
+        {
+                $this->Telefono = $Telefono;
+
+                return $this;
         }
     }
 ?>

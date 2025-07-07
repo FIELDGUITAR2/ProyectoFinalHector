@@ -3,7 +3,7 @@ include("presentacion/ExtremosRol/Cabeza.php");
 require_once("logica/Raza.php");
 require_once("logica/EstadoPerrito.php");
 
-$idDuenio = $_SESSION['idDuenio'] ?? '';
+$idDuenio = $_SESSION['id'] ?? '';
 
 
 $nombreMascota = trim($_POST['nombreMascota'] ?? '');
@@ -15,6 +15,8 @@ $fechaNacimiento = $_POST['fechaNacimiento'] ?? '';
 $mensaje = '';
 $mensajeTipo = '';
 
+echo "ID Duenio: ";
+echo $idDuenio;
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -25,7 +25,7 @@
         }
 
         public function MostrarEstados() {
-            return "select IdEstado, ValorEstado from EstadoPerrito";
+            return "select IdEstado, ValorEstado from estadoperrito";
         }
     }
 ?>

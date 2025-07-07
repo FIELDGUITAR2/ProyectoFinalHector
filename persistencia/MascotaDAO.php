@@ -119,35 +119,26 @@ class MascotaDAO
             p.Observacion as Observacion, 
             ep.ValorEstado as Estado_Perrito 
             FROM
-            Perrito p 
-            INNER JOIN Raza r on p.IdRaza = r.IdRaza 
-            INNER JOIN EstadoPerrito ep on p.IdEstadoPerrito = ep.IdEstado 
+            perrito p 
+            INNER JOIN raza r on p.IdRaza = r.IdRaza 
+            INNER JOIN estadoperrito ep on p.IdEstadoPerrito = ep.IdEstado 
             where
             p.IdDuenio =" . $this->IdDuenio;
     }
 
     public function EliminarMascota()
     {
-        return "delete from Perrito where IdPerrito =" . $this->Id;
+        return "delete from perrito where IdPerrito =" . $this->Id;
     }
 
     public function InsertarMascota()
     {
-        /*return "insert into Perrito(Nombre,IdRaza,IdDuenio,Foto,FechaNacimiento,Peso,Observacion,IdEstadoPerrito)
-        VALUES
-        ('".$this->Nombre."',"
-        .$this->Raza.","
-        .$this->IdDuenio.",'"
-        .$this->Foto."','"
-        .$this->FechaNacimiento."','"
-        .$this->Peso."','"
-        .$this->Observaciones."',"
-        .$this->idEstadoPerrito.")";*/
-        return "insert into Perrito(Nombre,IdRaza,IdDuenio,Foto,FechaNacimiento,Peso,Observacion,IdEstadoPerrito)\n"
+        
+        return "insert into perrito(Nombre,IdDuenio,IdRaza,IdEstadoPerrito,FechaNacimiento,Foto,Observacion,Peso)\n"
 
-    . "        VALUES\n"
+    . "VALUES\n"
 
-    . "        ('".$this->getNombre()."',".$this->getRaza().",".$this->getIdDuenio().",'".$this->getFoto()."','".$this->getFechaNacimiento()."','".$this->getPeso()."','".$this->getObservaciones()."',".$this->getIdEstadoPerrito().");";
+    . "('".$this->getNombre()."',".$this->getIdDuenio().",".$this->getRaza().",".$this->getIdEstadoPerrito().",'".$this->getFechaNacimiento()."','".$this->getFoto()."','".$this->getObservaciones()."','".$this->getPeso()."');";
     }
 
 }

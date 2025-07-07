@@ -26,7 +26,7 @@
 
         public function MostrarRazas()
         {
-            return "select IdRaza, ValorRaza from Raza";
+            return "select IdRaza, ValorRaza from raza";
         }
     }
 ?>

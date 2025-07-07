@@ -9,10 +9,10 @@ class Duenio extends Persona
     private $FechaRegistro;
     private $IdEstadoDuenio;
 
-    public function __construct($Id = "", $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "", $Clave = "", $FechaRegistro ="", $IdEstadoDuenio = "")
+    public function __construct($Id = "", $Nombre = "", $Apellido = "", $Telefono = "", $Direccion = "", $Foto = "", $Correo = "", $Clave = "", $FechaRegistro ="", $IdEstadoDuenio = "")
     {
         parent::__construct($Id, $Nombre, $Apellido, $Telefono, $Direccion,
-         $Foto);
+         $Foto, $Correo);
         $this->Clave = $Clave;
         $this->FechaRegistro = $FechaRegistro;
         $this->IdEstadoDuenio = $IdEstadoDuenio;
@@ -21,9 +21,9 @@ class Duenio extends Persona
     public function Autenticar()
     {
         $conexion = new Conexion();
-        $duenioDAO = new DuenioDAO("", "", "", 
-            $this->Telefono, "","", $this->Clave, 
-            "");
+        $duenioDAO = new DuenioDAO();
+        $duenioDAO->setTelefono($this->Telefono);
+        $duenioDAO->setClave($this->Clave);
         $conexion->abrir();
         $conexion->ejecutar($duenioDAO->Autenticar());
         if ($conexion->filas() == 1) {
@@ -93,6 +93,18 @@ class Duenio extends Persona
     public function getIdEstadoDuenio()
     {
         return $this->IdEstadoDuenio;
+    }
+
+    /**
+     * Set the value of Clave
+     *
+     * @return  self
+     */ 
+    public function setClave($Clave)
+    {
+        $this->Clave = $Clave;
+
+        return $this;
     }
 }
 ?>
