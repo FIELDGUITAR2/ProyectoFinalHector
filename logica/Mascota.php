@@ -1,4 +1,6 @@
 <?php
+    require_once("persistencia/Conexion.php");
+    require_once("persistencia/MascotaDAO.php");
     class Mascota
     {
         private $Id;
@@ -6,16 +8,22 @@
         private $Raza;
         private $FechaNacimiento;
         private $Foto;
+        private $Peso;
         private $IdDuenio;
+        private $idEstadoPerrito;
+        private $Observaciones;
 
-        public function __construct($Id = "", $Nombre = "", $Raza = "", $FechaNacimiento = "", $Foto = "", $IdDuenio = "")
+        public function __construct($Id = "", $Nombre = "", $Raza = "", $FechaNacimiento = "", $Foto = "", $Peso = "", $IdDuenio = "", $idEstadoPerrito = "", $Observaciones = "")
         {
             $this->Id = $Id;
             $this->Nombre = $Nombre;
             $this->Raza = $Raza;
             $this->FechaNacimiento = $FechaNacimiento;
             $this->Foto = $Foto;
+            $this->Peso = $Peso;
             $this->IdDuenio = $IdDuenio;
+            $this->idEstadoPerrito = $idEstadoPerrito;
+            $this->Observaciones = $Observaciones;
         }
         public function getId() {
             return $this->Id;
@@ -65,6 +73,94 @@
             $this->IdDuenio = $IdDuenio;
         }
 
-    
+        public function getIdEstadoPerrito() {
+            return $this->idEstadoPerrito;
+        }
+
+        public function setIdEstadoPerrito($idEstadoPerrito) {
+            $this->idEstadoPerrito = $idEstadoPerrito;
+        }
+
+        public function getObservaciones() {
+            return $this->Observaciones;
+        }
+
+        public function setObservaciones($Observaciones) {
+            $this->Observaciones = $Observaciones;
+        }
+
+        public function getPeso()
+        {
+                return $this->Peso;
+        }
+
+        public function setPeso($Peso)
+        {
+                $this->Peso = $Peso;
+                return $this;
+        }
+        
+
+        public function VerMascota()
+        {
+            $conexion = new Conexion();
+            $mascotaDAO = new MascotaDAO("","","","", "",
+                "", $this->IdDuenio, "", "");
+            $conexion->abrir();
+            $conexion->ejecutar($mascotaDAO->VerMascota());
+            $mascotas = [];
+            while(($datos = $conexion->registro()) !== null)
+            {
+                $mascota = new Mascota(
+                    $datos[0],  // Id
+                    $datos[1],  // Nombre
+                    $datos[2],  // Raza
+                    $datos[3],
+                    "",
+                    $datos[4], // Peso
+                    $this->IdDuenio,
+                    $datos[6],
+                    $datos[5]
+                     // Observaciones 
+                      // FechaNacimiento
+                );
+                array_push($mascotas, $mascota);
+            }
+            $conexion->cerrar();
+            if($mascotas == null)
+            {
+                return "Error";
+            }
+            return $mascotas;
+        }
+        public function EliminarMascota($id = "")
+        {
+            $conexion = new Conexion();
+            $mascotaDAO = new MascotaDAO($id);
+            $conexion->abrir();
+            $conexion->ejecutar($mascotaDAO->EliminarMascota());
+            $conexion->cerrar();
+            return "Mascota eliminada correctamente.";
+        }
+
+        public function InsertarMascota()
+        {
+            $conexion = new Conexion();
+            $mascotaDAO = new MascotaDAO(
+                $this->Id,
+                $this->Nombre,
+                $this->Raza,
+                $this->FechaNacimiento,
+                $this->Foto,
+                $this->Peso,
+                $this->IdDuenio,
+                $this->idEstadoPerrito,
+                $this->Observaciones
+            );
+            $conexion->abrir();
+            $conexion->ejecutar($mascotaDAO->InsertarMascota());
+            $conexion->cerrar();
+            return "Mascota insertada correctamente.";
+        }
     }
 ?>

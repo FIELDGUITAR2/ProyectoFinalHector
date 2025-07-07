@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>TheWalkingPets</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -81,24 +81,35 @@ if($_SESSION["rol"] == "Duenio") {
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
+                            <?php
+                                if(session_id()== "") {
+                            ?>
                             <a class="nav-link active" aria-current="page"
-                                href="?pid=<?php echo base64_encode("presentacion/Inicio.php") ?>">Home</a>
+                            href="?pid=<?php echo base64_encode("presentacion/Inicio.php") ?>">Home</a>
+                            <?php
+                                } else {
+                            ?>
+                            <a class="nav-link active" aria-current="page"
+                            href="?pid=<?php echo base64_encode("presentacion/Inicio.php") ?>&sesion=false">Home</a>
+                            <?php
+                                }
+                            ?>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="?pid=<?php echo base64_encode("") ?>">Pagina Principal</a>
+                                href="?pid=<?php echo base64_encode("presentacion/SesionDuenio.php") ?>">Pagina Principal</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="?pid=<?php echo base64_encode("") ?>">Aniadir o eliminar mascota</a>
+                                href="?pid=<?php echo base64_encode("presentacion/AniadirEliminarMascota.php") ?>">Aniadir mascota</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="?pid=<?php echo base64_encode("") ?>">Ver mis mascotas</a>
+                                href="?pid=<?php echo base64_encode("presentacion/VerMascotas.php") ?>">Ver mis mascotas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="?pid=<?php echo base64_encode("") ?>">Mis paseadores</a>
+                                href="?pid=<?php echo base64_encode("presentacion/MisPaseadores.php") ?>">Mis paseadores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"

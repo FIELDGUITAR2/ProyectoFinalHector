@@ -1,5 +1,7 @@
 <?php
     include("presentacion/ExtremosRol/Cabeza.php");
+    require('logica/Duenio.php');
+    require('logica/Mascota.php');
 ?>
 <?php
     include("presentacion/MenuDuenio.php");
