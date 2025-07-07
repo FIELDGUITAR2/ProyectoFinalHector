@@ -141,5 +141,10 @@ class MascotaDAO
     . "('".$this->getNombre()."',".$this->getIdDuenio().",".$this->getRaza().",".$this->getIdEstadoPerrito().",'".$this->getFechaNacimiento()."','".$this->getFoto()."','".$this->getObservaciones()."','".$this->getPeso()."');";
     }
 
+    public function MatarMascota()
+    {
+        return "update perrito set IdEstadoPerrito = 3 where IdPerrito =".$this->Id;
+    }
+
 }
 ?>

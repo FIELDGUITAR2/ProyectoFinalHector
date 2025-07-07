@@ -112,17 +112,15 @@
             while(($datos = $conexion->registro()) !== null)
             {
                 $mascota = new Mascota(
-                    $datos[0],  // Id
-                    $datos[1],  // Nombre
-                    $datos[2],  // Raza
+                    $datos[0],  
+                    $datos[1],  
+                    $datos[2],  
                     $datos[3],
                     "",
-                    $datos[4], // Peso
+                    $datos[4], 
                     $this->IdDuenio,
                     $datos[6],
                     $datos[5]
-                     // Observaciones 
-                      // FechaNacimiento
                 );
                 array_push($mascotas, $mascota);
             }
@@ -161,6 +159,15 @@
             $conexion->ejecutar($mascotaDAO->InsertarMascota());
             $conexion->cerrar();
             return "Mascota insertada correctamente.";
+        }
+
+        public function MatarMascota(){
+            $conexion = new Conexion();
+            $mascotaDAO = new MascotaDAO($this->Id);
+            $conexion->abrir();
+            $conexion->ejecutar($mascotaDAO->MatarMascota());
+            $conexion->cerrar();
+            return "Mascota eliminada correctamente.";
         }
     }
 ?>
