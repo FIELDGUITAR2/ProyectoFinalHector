@@ -26,7 +26,7 @@ class DuenioDAO {
 
     public function Autenticar()
     {
-        return "select IdDuenio from duenio where Telefono = '" 
+        return "select IdDuenio from duenio where IdDuenio = '" 
         . $this->Telefono 
         . "' and Clave = md5('" . $this->Clave . "');";
     }
@@ -40,15 +40,11 @@ class DuenioDAO {
 
     public function Insertar()
     {
-        return "insert into Duenio(IdDuenio,Nombre,Apellido,Clave,Direccion,Telefono,
-        FechaRegistro,IdEstadoDuenio) values(" . $this->Id . ",
-        '" . $this->Nombre . "',
-        '" . $this->Apellido . "',
-        md5('" . $this->Clave . "'),
-        '" . $this->Direccion . "',
-        '" . $this->Telefono . "',
-        '" . $this->FechaRegistro . "',
-        " . $this->EstadoDuenio . ")";
+        return "insert into duenio(IdDuenio,IdEstadoDuenio,Nombre,Apellido,Correo,Telefono,Foto,Direccion,FechaRegistro,Clave)\n"
+
+    . "VALUES\n"
+
+    . "('".$this->getId()."',1,'".$this->getNombre()."','".$this->getApellido()."','".$this->getCorreo()."','".$this->getTelefono()."','".$this->getFoto()."','".$this->getDireccion()."','".$this->getFechaRegistro()."',md5('".$this->getClave()."'))";
     }
     public function getId() {
         return $this->Id;
@@ -122,5 +118,25 @@ class DuenioDAO {
         $this->EstadoDuenio = $EstadoDuenio;
     }
     
+
+    /**
+     * Get the value of Correo
+     */ 
+    public function getCorreo()
+    {
+        return $this->Correo;
+    }
+
+    /**
+     * Set the value of Correo
+     *
+     * @return  self
+     */ 
+    public function setCorreo($Correo)
+    {
+        $this->Correo = $Correo;
+
+        return $this;
+    }
 }
 ?>

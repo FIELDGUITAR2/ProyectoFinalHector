@@ -25,7 +25,7 @@
         $correo = $_POST["correo"];
         $clave = $_POST["clave"];
         $admin = new Admin();
-        $admin->setTelefono($correo);
+        $admin->setId($correo);
         if ($admin->Autenticar()) {
             $_SESSION["id"] = $admin->getId();
             $_SESSION["rol"] = "admin";
@@ -33,7 +33,7 @@
             exit();
         } else {
             $Duenio = new Duenio();
-            $Duenio->setTelefono($correo);
+            $Duenio->setId($correo);
             $Duenio->setClave($clave);
             if ($Duenio->Autenticar()) {
                 $_SESSION["id"] = $Duenio->getId();
@@ -67,8 +67,8 @@
             <?php } ?>
             <form method="post" action="">
                 <div class="mb-3">
-                    <label for="correo" class="form-label">Numero Celular</label>
-                    <input type="text" class="form-control" id="correo" name="correo" placeholder="3000000000" required>
+                    <label for="correo" class="form-label">Tu ID</label>
+                    <input type="text" class="form-control" id="correo" name="correo" placeholder="Numero de ID" required>
                 </div>
                 <div class="mb-3">
                     <label for="clave" class="form-label">Contraseña</label>

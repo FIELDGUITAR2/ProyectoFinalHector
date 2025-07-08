@@ -63,9 +63,7 @@ class Duenio extends Persona
     public function Crear()
     {
         $conexion = new Conexion();
-        $duenioDAO = new DuenioDAO($this->Id, $this->Nombre, $this->Apellido, 
-            $this->Telefono, $this->Direccion, $this->Foto, 
-            $this->Clave, $this->FechaRegistro);
+        $duenioDAO = new DuenioDAO($this->getId(),$this->getNombre(),$this->getApellido(),$this->getTelefono(),$this->getDireccion(),$this->getFoto(),$this->getClave(),$this->getFechaRegistro(),$this->getIdEstadoDuenio());
         $conexion->abrir();
         $conexion->ejecutar($duenioDAO->Insertar());
         $conexion->cerrar();

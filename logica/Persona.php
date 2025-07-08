@@ -96,5 +96,21 @@
 
                 return $this;
         }
+
+        /**
+         * Get the value of Id
+         */ 
+
+        /**
+         * Set the value of Id
+         *
+         * @return  self
+         */ 
+        public function setId($Id)
+        {
+                $this->Id = $Id;
+
+                return $this;
+        }
     }
 ?>

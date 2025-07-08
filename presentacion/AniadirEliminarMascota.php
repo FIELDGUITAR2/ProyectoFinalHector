@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                     <div class="invalid-feedback">Por favor, seleccione la raza.</div>
                 </div>
-                <div class="d-grid">
+                <div class="d-grid mb-4">
                     <button type="submit" class="btn btn-primary">Insertar mascota</button>
                 </div>
             </form>
