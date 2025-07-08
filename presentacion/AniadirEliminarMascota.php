@@ -5,7 +5,7 @@ require_once("logica/EstadoPerrito.php");
 
 $idDuenio = $_SESSION['id'] ?? '';
 
-
+$idMascota = $_POST['idMascota'] ?? '';
 $nombreMascota = trim($_POST['nombreMascota'] ?? '');
 $peso = $_POST['peso'] ?? '';
 $observacion = trim($_POST['observacion'] ?? '');
@@ -14,10 +14,6 @@ $raza = $_POST['raza'] ?? '';
 $fechaNacimiento = $_POST['fechaNacimiento'] ?? '';
 $mensaje = '';
 $mensajeTipo = '';
-
-echo "ID Duenio: ";
-echo $idDuenio;
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once("logica/Mascota.php");
@@ -45,12 +41,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
-            <h2 class="mb-4 text-center">Añadir</h2>
-            <p class="text-center">Esta sección permite a los dueños añadir mascotas a su cuenta.</p>
+            <h2 class="mb-4 text-center">Añadir o editar</h2>
+            <p class="text-center">Esta sección permite a los dueños añadir mascotas a su cuenta</p>
+            <p class="text-center">o editar los datos de su mascota.</p>
             <?php if ($mensaje): ?>
                 <div class="alert alert-<?= $mensajeTipo ?> mt-3"><?= $mensaje ?></div>
             <?php endif; ?>
             <form action="" method="post" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="idMascota" class="form-label">ID de la Mascota:</label>
+                    <input type="text" id="idMascota" name="idMascota" class="form-control" required
+                        value="<?= htmlspecialchars($_POST['idMascota'] ?? '') ?>">
+                    <div class="invalid-feedback">Por favor, ingrese el ID de la mascota.</div>
+                </div>
                 <div class="mb-3">
                     <label for="nombreMascota" class="form-label">Nombre de la Mascota:</label>
                     <input type="text" id="nombreMascota" name="nombreMascota" class="form-control" required

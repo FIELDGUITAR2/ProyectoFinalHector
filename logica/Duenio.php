@@ -22,7 +22,7 @@ class Duenio extends Persona
     {
         $conexion = new Conexion();
         $duenioDAO = new DuenioDAO();
-        $duenioDAO->setTelefono($this->Telefono);
+        $duenioDAO->setTelefono($this->Id);
         $duenioDAO->setClave($this->Clave);
         $conexion->abrir();
         $conexion->ejecutar($duenioDAO->Autenticar());
