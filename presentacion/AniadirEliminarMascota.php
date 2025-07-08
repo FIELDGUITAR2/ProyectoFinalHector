@@ -1,11 +1,10 @@
 <?php
-include("presentacion/ExtremosRol/Cabeza.php");
-require_once("logica/Raza.php");
-require_once("logica/EstadoPerrito.php");
+include "presentacion/ExtremosRol/Cabeza.php";
+require_once "logica/Raza.php";
+require_once "logica/EstadoPerrito.php";
 
 $idDuenio = $_SESSION['id'] ?? '';
 
-$idMascota = $_POST['idMascota'] ?? '';
 $nombreMascota = trim($_POST['nombreMascota'] ?? '');
 $peso = $_POST['peso'] ?? '';
 $observacion = trim($_POST['observacion'] ?? '');
@@ -14,19 +13,46 @@ $raza = $_POST['raza'] ?? '';
 $fechaNacimiento = $_POST['fechaNacimiento'] ?? '';
 $mensaje = '';
 $mensajeTipo = '';
+$rutaCompleta = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once("logica/Mascota.php");
+    require_once "logica/Mascota.php";
 
-    $mascota = new Mascota("",
-    $nombreMascota,
-    $raza,
-    $fechaNacimiento,
-    "",
-    $peso,
-    $idDuenio,
-    $estadoPerrito,
-    $observacion);
+    if (isset($_POST['submit'])) {
+        $carpetaDestino = "imagenes/";
+
+        // Obtener info del archivo
+        $nombreArchivo = basename($_FILES["imagen"]["name"]);
+        $rutaCompleta = $carpetaDestino . $nombreArchivo;
+
+        // Validar que sea una imagen
+        $tipoArchivo = strtolower(pathinfo($rutaCompleta, PATHINFO_EXTENSION));
+        $permitidos = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+        if (in_array($tipoArchivo, $permitidos)) {
+            // Mover el archivo al destino
+            if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaCompleta)) {
+                echo "<p>Imagen subida exitosamente.</p>";
+                echo "<img src='$rutaCompleta' alt='Imagen subida' width='300'>";
+            } else {
+                echo "<p>Error al subir la imagen.</p>";
+            }
+        } else {
+            echo "<p>Solo se permiten imágenes JPG, PNG, GIF, WEBP.</p>";
+        }
+    }
+
+    $mascota = new Mascota(
+        "",
+        $nombreMascota,
+        $raza,
+        $fechaNacimiento,
+        $rutaCompleta,
+        $peso,
+        $idDuenio,
+        $estadoPerrito,
+        $observacion
+    );
     if ($mascota->InsertarMascota()) {
         $mensaje = "Mascota añadida correctamente.";
         $mensajeTipo = "success";
@@ -36,6 +62,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mensajeTipo = "danger";
     }
 }
+
+/*if (isset($_POST['submit'])) {
+    $carpetaDestino = "imagenes/";
+
+    // Obtener info del archivo
+    $nombreArchivo = basename($_FILES["imagen"]["name"]);
+    $rutaCompleta = $carpetaDestino . $nombreArchivo;
+
+    // Validar que sea una imagen
+    $tipoArchivo = strtolower(pathinfo($rutaCompleta, PATHINFO_EXTENSION));
+    $permitidos = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+    if (in_array($tipoArchivo, $permitidos)) {
+        // Mover el archivo al destino
+        if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaCompleta)) {
+            echo "<p>Imagen subida exitosamente.</p>";
+            echo "<img src='$rutaCompleta' alt='Imagen subida' width='300'>";
+        } else {
+            echo "<p>Error al subir la imagen.</p>";
+        }
+    } else {
+        echo "<p>Solo se permiten imágenes JPG, PNG, GIF, WEBP.</p>";
+    }
+}*/
 ?>
 
 <div class="container mt-5">
@@ -47,13 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php if ($mensaje): ?>
                 <div class="alert alert-<?= $mensajeTipo ?> mt-3"><?= $mensaje ?></div>
             <?php endif; ?>
-            <form action="" method="post" class="needs-validation" novalidate>
-                <div class="mb-3">
-                    <label for="idMascota" class="form-label">ID de la Mascota:</label>
-                    <input type="text" id="idMascota" name="idMascota" class="form-control" required
-                        value="<?= htmlspecialchars($_POST['idMascota'] ?? '') ?>">
-                    <div class="invalid-feedback">Por favor, ingrese el ID de la mascota.</div>
-                </div>
+            <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                 <div class="mb-3">
                     <label for="nombreMascota" class="form-label">Nombre de la Mascota:</label>
                     <input type="text" id="nombreMascota" name="nombreMascota" class="form-control" required
@@ -118,6 +162,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                     <div class="invalid-feedback">Por favor, seleccione la raza.</div>
                 </div>
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Imagen de la Mascota:</label>
+                    <input type="file" id="imagen" name="imagen" class="form-control" accept="image/*" required>
+                    <div class="invalid-feedback">Por favor, seleccione una imagen.</div>
+                </div>
+
                 <div class="d-grid mb-4">
                     <button type="submit" class="btn btn-primary">Insertar mascota</button>
                 </div>
@@ -127,5 +177,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <?php
-include("presentacion/ExtremosRol/Pie.php");
+include "presentacion/ExtremosRol/Pie.php";
 ?>
